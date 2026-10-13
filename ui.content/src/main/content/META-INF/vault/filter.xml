@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/itransparity" mode="merge"/>
+    <filter root="/content/itransparity" mode="merge"/>
+    <filter root="/content/dam/itransparity" mode="merge">
+        <exclude pattern="/content/dam/itransparity(/.*)?"/>
+        <include pattern="/content/dam/itransparity/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/itransparity/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/itransparity" mode="merge"/>
+</workspaceFilter>

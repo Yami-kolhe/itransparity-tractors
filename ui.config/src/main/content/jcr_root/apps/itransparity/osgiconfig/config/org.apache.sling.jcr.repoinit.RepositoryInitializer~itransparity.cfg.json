@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/itransparity",
+        "create path (nt:unstructured) /content/dam/itransparity/jcr:content",
+        "set properties on /content/dam/itransparity/jcr:content\n  set cq:conf{String} to /conf/itransparity\n  set jcr:title{String} to \"iTransparity Tractors\"\nend"
+    ]
+}
