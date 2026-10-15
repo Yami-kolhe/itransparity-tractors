@@ -1,0 +1,91 @@
+<sly data-sly-use.tractor="com.itransparity.core.core.models.TractorDetailModel"
+        data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html">
+
+    <article class="tractor-detail" data-sly-test="${!tractor.empty}">
+
+        <nav class="tractor-detail__crumb" aria-label="Breadcrumb">
+            <a href="${tractor.backLink}">
+                Back to All Tractors
+            </a>
+
+            <span aria-hidden="true">/</span>
+
+            <span aria-current="page">
+                ${tractor.name}
+            </span>
+        </nav>
+
+        <div class="tractor-detail__layout">
+
+            <img
+                    class="tractor-detail__img"
+                    data-sly-test="${tractor.imageUrl}"
+                    src="${tractor.imageUrl}"
+                    alt="${tractor.name}" />
+
+            <div>
+
+                <h1 class="tractor-detail__title">
+                    ${tractor.name}
+                </h1>
+
+                <table class="tractor-detail__specs">
+
+                    <caption class="sr-only">
+                        Specifications
+                    </caption>
+
+                    <tbody>
+
+                    <tr data-sly-repeat.spec="${tractor.specs}">
+
+                        <th scope="row">
+                            ${spec.label}
+                        </th>
+
+                        <td>
+                            ${spec.value}
+                        </td>
+
+                    </tr>
+
+                    </tbody>
+
+                </table>
+
+                <div class="tractor-detail__cta"
+                        data-sly-test="${tractor.ctaLabel && tractor.ctaLink}">
+
+                    <a
+                            class="tractor-detail__cta-link"
+                            href="${tractor.ctaLink}">
+
+                        ${tractor.ctaLabel}
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <section class="tractor-detail__text"
+                data-sly-test="${tractor.description}">
+
+            <h2>
+                About this tractor
+            </h2>
+
+            <div>
+                ${tractor.description @ context='html'}
+            </div>
+
+        </section>
+
+    </article>
+
+    <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=tractor.empty}">
+    </sly>
+
+</sly>

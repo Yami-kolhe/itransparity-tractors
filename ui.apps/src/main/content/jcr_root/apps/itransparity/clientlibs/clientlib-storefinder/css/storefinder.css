@@ -1,0 +1,82 @@
+.store-finder {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2rem 5vw;
+}
+
+.store-finder__title {
+  font: 700 clamp(1.6rem, 4vw, 2.2rem) / 1.15 Georgia, serif;
+  margin: 0 0 1rem;
+}
+
+.store-finder__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.store-finder__select {
+  font: inherit;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #d9d6c9;
+  border-radius: 6px;
+  background: #fff;
+  color: #1d2a22;
+}
+
+.store-finder__detect {
+  font: inherit;
+  font-weight: 700;
+  padding: 0.6rem 1.1rem;
+  border: 0;
+  border-radius: 6px;
+  background: #2f5d3a;
+  color: #fff;
+  cursor: pointer;
+}
+
+.store-finder__select:focus-visible,
+.store-finder__detect:focus-visible {
+  outline: 3px solid #f2b705;
+  outline-offset: 2px;
+}
+
+.store-finder__status {
+  color: #5a665e;
+  margin: 0 0 1rem;
+  min-height: 1.5em;
+}
+
+.store-finder__list {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.store-finder__item {
+  background: #fff;
+  border: 1px solid #d9d6c9;
+  border-left: 5px solid #2f5d3a;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+}
+
+.store-finder__item strong {
+  display: block;
+}
+
+.store-finder__empty {
+  background: #fff;
+  border: 2px dashed #d9d6c9;
+  border-radius: 8px;
+  padding: 1.4rem;
+  text-align: center;
+}
+
+.store-finder__empty[hidden] {
+  display: none;
+}

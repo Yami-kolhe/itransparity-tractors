@@ -1,0 +1,49 @@
+<sly data-sly-use.header="com.itransparity.core.core.models.HeaderModel">
+
+    <header class="site-header">
+
+        <div class="site-header__top">
+            <a class="site-header__logo" href="${header.homeLink}">
+                <img
+                        data-sly-test="${header.logo}"
+                        src="${header.logo}"
+                        alt="iTransparity"
+                />
+                <span data-sly-test="${!header.logo}">
+                    iTransparity
+                </span>
+            </a>
+
+            <!-- Mobile hamburger -->
+            <button
+                    class="site-header__menu-toggle"
+                    type="button"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                    aria-controls="site-header-navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav
+                id="site-header-navigation"
+                class="site-header__nav"
+                aria-label="Main navigation">
+
+            <ul>
+                <li data-sly-repeat.item="${header.items}">
+                    <a
+                            href="${item.link}"
+                            aria-current="${item.active ? 'page' : false}">
+                        ${item.title}
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+</sly>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+        xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+        xmlns:jcr="http://www.jcp.org/jcr/1.0"
+        xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+        xmlns:cq="http://www.day.com/jcr/cq/1.0"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Hero Banner"
+        sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+
+        <items jcr:primaryType="nt:unstructured">
+
+            <image
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                    class="cq-droptarget"
+                    fieldLabel="Banner image"
+                    fileNameParameter="./fileName"
+                    fileReferenceParameter="./fileReference"
+                    mimeTypes="[image/gif,image/jpeg,image/png,image/webp]"
+                    name="./file"
+                    multiple="{Boolean}false"
+                    autoStart="{Boolean}false"/>
+
+            <headline
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Headline"
+                    name="./headline"/>
+
+            <subText
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                    fieldLabel="Sub-text"
+                    name="./subText"/>
+
+            <ctaLabel
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Button label"
+                    name="./ctaLabel"/>
+
+            <ctaLink
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                    fieldLabel="Button link"
+                    rootPath="/content/itransparity"
+                    name="./ctaLink"/>
+
+        </items>
+    </content>
+</jcr:root>

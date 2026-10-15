@@ -1,0 +1,53 @@
+
+<sly
+        data-sly-use.finder="com.itransparity.core.core.models.StoreFinderModel"
+        data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html">
+
+    <sly
+            data-sly-call="${clientlib.all @ categories='itransparity.storefinder'}">
+    </sly>
+
+    <section
+            class="store-finder"
+            data-endpoint="${finder.endpoint}"
+            data-regions="${finder.regionsJson}">
+
+        <h2 class="store-finder__title">Find a dealer</h2>
+
+        <div class="store-finder__controls">
+            <label for="store-region">Location</label>
+
+            <select
+                    id="store-region"
+                    class="store-finder__select">
+
+                <option
+                        data-sly-repeat.r="${finder.regions}"
+                        value="${r.key}">
+                    ${r.label}
+                </option>
+            </select>
+
+            <button
+                    type="button"
+                    class="store-finder__detect">
+                Use my location
+            </button>
+        </div>
+
+        <p
+                class="store-finder__status"
+                aria-live="polite">
+        </p>
+
+        <ul
+                class="store-finder__list"
+                aria-live="polite">
+        </ul>
+
+        <p class="store-finder__empty" hidden>
+            No dealerships found near your location.
+        </p>
+
+    </section>
+</sly>

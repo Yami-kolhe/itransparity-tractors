@@ -1,0 +1,56 @@
+
+<sly
+        data-sly-use.grid="com.itransparity.core.core.models.TractorGridModel"
+        data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html">
+
+    <section
+            class="tractor-grid"
+            data-sly-test="${!grid.empty}"
+            aria-label="Our tractors">
+
+        <ul class="tractor-grid__list">
+
+            <li
+                    class="tractor-card"
+                    data-sly-repeat.card="${grid.cards}">
+
+                <img
+                        class="tractor-card__img"
+                        data-sly-test="${card.imageUrl}"
+                        src="${card.imageUrl}"
+                        alt="${card.name}"
+                        loading="lazy"/>
+
+                <div class="tractor-card__body">
+
+                    <h3 class="tractor-card__name">
+                        ${card.name}
+                    </h3>
+
+                    <div
+                            class="tractor-card__text"
+                            data-sly-test="${card.shortDescription}">
+                        ${card.shortDescription @ context='html'}
+                    </div>
+
+                    <p class="tractor-card__spec">
+                        ${card.horsepower} HP, ${card.engineType}
+                    </p>
+
+                    <a
+                            class="tractor-card__link"
+                            href="${card.link}">
+                        View Details
+                    </a>
+
+                </div>
+            </li>
+
+        </ul>
+    </section>
+
+    <sly
+            data-sly-call="${placeholderTemplate.placeholder @ isEmpty=grid.empty}">
+    </sly>
+
+</sly>

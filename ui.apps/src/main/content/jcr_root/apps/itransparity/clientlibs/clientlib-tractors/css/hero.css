@@ -1,0 +1,58 @@
+body { margin: 0; font-family: "Trebuchet MS", Verdana, sans-serif; }
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #22402b;
+  color: #fff;
+}
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(15,36,23,.85) 0%, rgba(15,36,23,.35) 100%);
+}
+.hero__content {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 5vw;
+  max-width: 720px;
+}
+.hero__title { font: 700 clamp(2rem, 6vw, 3.6rem)/1.1 Georgia, serif; margin: 0 0 1rem; }
+.hero__sub   { font-size: 1.15rem; margin: 0 0 1.5rem; color: #e3ebe4; }
+.hero__cta {
+  display: inline-block;
+  background: #f2b705;
+  color: #1d2a22;
+  font-weight: 700;
+  padding: .8rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.hero__cta:hover,
+.hero__cta:focus-visible { background: #ffd34d; outline: 3px solid #fff; outline-offset: 2px; }
+
+@media (max-width: 768px) {
+.hero {
+ min-height: 340px;
+  }
+}
+@media (max-width: 480px) {
+.hero {
+min-height: 280px;
+}
+.hero__content {
+padding: 2rem 1.25rem;
+ }
+}

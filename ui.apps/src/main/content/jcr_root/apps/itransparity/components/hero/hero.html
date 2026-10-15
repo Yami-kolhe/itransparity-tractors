@@ -1,0 +1,38 @@
+<sly
+        data-sly-use.hero="com.itransparity.core.core.models.HeroModel"
+        data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html">
+
+    <section
+            class="hero"
+            data-sly-test="${!hero.empty}">
+
+        <img
+                class="hero__bg"
+                data-sly-test="${hero.imageUrl}"
+                src="${hero.imageUrl}"
+                alt=""/>
+
+        <div class="hero__content">
+            <h1 class="hero__title">${hero.headline}</h1>
+
+            <p class="hero__sub">${hero.subText}</p>
+
+            <a
+                    class="hero__cta"
+                    data-sly-test="${hero.ctaLabel}"
+                    href="${hero.ctaLink}">
+                ${hero.ctaLabel}
+            </a>
+        </div>
+    </section>
+
+    <sly
+            data-sly-call="${placeholderTemplate.placeholder @ isEmpty=hero.empty}">
+    </sly>
+</sly>
+
+<sly data-sly-use.tractorLibs="/libs/granite/sightly/templates/clientlib.html">
+    <sly
+            data-sly-call="${tractorLibs.css @ categories='itransparity.tractors'}">
+    </sly>
+</sly>
